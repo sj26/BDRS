@@ -943,4 +943,5 @@
                 <bdrs.file.store.location>/home/bdrs/filestore</bdrs.file.store.location>
             </properties>
         </profile>
+    </profiles>
 </project>
