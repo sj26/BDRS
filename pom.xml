@@ -26,10 +26,6 @@
             <url>http://nexus.openqa.org/content/repositories/releases</url>
         </repository>
         <repository>
-            <id>Tartarus</id>
-            <url>http://tartarus:8080/artifactory/repo/</url>
-        </repository>
-        <repository>
             <id>ALA</id>
             <url>http://maven.ala.org.au/repository</url>
         </repository>
