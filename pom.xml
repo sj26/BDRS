@@ -206,9 +206,9 @@
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
-	        <artifactId>slf4j-log4j12</artifactId>
+            <artifactId>slf4j-log4j12</artifactId>
             <version>1.5.8</version>
-    	</dependency>
+        </dependency>
         <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -449,19 +449,19 @@
             <version>5.4.2</version>
             <scope>compile</scope>
         </dependency>
-    	<!-- Display Tag -->
-    	<dependency>
-    	    <groupId>displaytag</groupId>
-    	    <artifactId>displaytag</artifactId>
-    	    <version>1.2</version>
-    	    <scope>compile</scope>
-    	</dependency>
-    	<!-- maven svn revision number -->
-    	<dependency>
-    	    <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
-    	    <artifactId>maven-svn-revision-number-plugin</artifactId>
-    	    <version>1.6</version>
-    	</dependency>
+        <!-- Display Tag -->
+        <dependency>
+            <groupId>displaytag</groupId>
+            <artifactId>displaytag</artifactId>
+            <version>1.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- maven svn revision number -->
+        <dependency>
+            <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
+            <artifactId>maven-svn-revision-number-plugin</artifactId>
+            <version>1.6</version>
+        </dependency>
         <!-- File Type Detection -->
         <dependency>
             <groupId>org.apache.tika</groupId>
@@ -491,8 +491,8 @@
             </testResource>
         </testResources>
         <plugins>
-	    <!-- Build revision stamping -->
-	    <plugin>
+        <!-- Build revision stamping -->
+        <plugin>
                 <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
                 <artifactId>maven-svn-revision-number-plugin</artifactId>
                 <version>1.6</version>
@@ -526,7 +526,7 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <nonFilteredFileExtensions>
-			            <nonFilteredFileExtension>xls</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>xls</nonFilteredFileExtension>
                     </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
