@@ -608,7 +608,7 @@
                     <execution>
                         <phase>generate-resources</phase>
                         <goals>
-                            <goal>write-project-properties</goal>
+                            <goal>write-active-profile-properties</goal>
                         </goals>
                         <configuration>
                             <outputFile>
