@@ -8,7 +8,7 @@ This is the [Atlas of Living Australia][ala] Citizen Science project codebase.
  
  2. Generate the database definitions:
     
-        mvn -P dev -D skipTests clean package hibernate3:hbm2ddl
+        mvn -D skipTests hibernate3:hbm2ddl
     
     __This can take a while__ as it downloads all the project dependencies for the first time. Don't worry, they'll be cached. We skip tests as there's no database set up yet.
     
@@ -46,9 +46,13 @@ This is the [Atlas of Living Australia][ala] Citizen Science project codebase.
         <bdrs.db.driver>org.postgresql.Driver</bdrs.db.driver>
 
  6. Run it:
-    
+
         mvn jetty:run
     
+    This will automatically run `package` for you. If you just want to deploy at this stage, run `mvn package` instead.
+    
+    Make sure you use `-P <profile>` if you've added another profile. You might need to `mvn -P <profile> clean package` if you want to change profiles.
+
  7. Check it out: open _http://localhost:8080/BDRS_ and login with username _admin_ and password _password_.
 
 ## Deployment
