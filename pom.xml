@@ -35,6 +35,12 @@
             <url>https://repository.apache.org/content/repositories/snapshots</url>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>Hibernate Spatial repo</id>
+            <url>http://www.hibernatespatial.org/repository</url>
+        </pluginRepository>
+    </pluginRepositories>
     <dependencies>
         <!-- Selenium -->
         <dependency>
