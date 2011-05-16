@@ -113,26 +113,22 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>3.0.4.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
             <version>3.0.4.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>3.0.4.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Spring Testing -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>3.0.4.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Spring Security -->
         <dependency>
@@ -165,53 +161,45 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>3.0.3.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Spring Web -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>3.0.3.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Spring JMS -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jms</artifactId>
             <version>3.0.3.RELEASE</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>net.sf.json-lib</groupId>
             <artifactId>json-lib</artifactId>
             <version>2.3</version>
             <classifier>jdk15</classifier>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>xom</groupId>
             <artifactId>xom</artifactId>
             <version>1.1</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Tiles -->
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-api</artifactId>
             <version>2.2.2</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-core</artifactId>
             <version>2.2.2</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-jsp</artifactId>
             <version>2.2.2</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -223,33 +211,28 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>3.3.2.GA</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Hibernate Annotations -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-annotations</artifactId>
             <version>3.4.0.GA</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-ehcache</artifactId>
             <version>3.3.2.GA</version>
-            <scope>compile</scope>
         </dependency>
         <!--dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-commons-annotations</artifactId>
             <version>3.3.0.ga</version>
-            <scope>compile</scope>
         </dependency-->
         <!-- Hibernate Spatial -->
         <dependency>
             <groupId>org.hibernatespatial</groupId>
             <artifactId>hibernate-spatial</artifactId>
             <version>1.0</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.hibernatespatial</groupId>
@@ -269,7 +252,6 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>1.4</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Commons FileUpload -->
         <dependency>
@@ -283,47 +265,40 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.4</version>
-            <scope>compile</scope>
         </dependency>
         <!-- javax.mail -->
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
             <version>1.4</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Apache Velocity -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>1.6</version>
-            <scope>compile</scope>
         </dependency>
         <!-- JTS -->
         <dependency>
             <groupId>com.vividsolutions</groupId>
             <artifactId>jts</artifactId>
             <version>1.9</version>
-            <scope>compile</scope>
         </dependency>
         <!-- GeoTools Referencing -->
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-referencing</artifactId>
             <version>2.5.3</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-epsg-wkt</artifactId>
             <version>2.5-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-shapefile</artifactId>
             <version>2.5.3</version>
-            <scope>compile</scope>
             <exclusions>
                 <exclusion>
                     <groupId>velocity</groupId>
@@ -335,27 +310,23 @@
             <groupId>org.geotools</groupId>
             <artifactId>gt-render</artifactId>
             <version>2.5.3</version>
-            <scope>compile</scope>
         </dependency>
         <!-- XML APIS -->
         <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
             <version>1.3.04</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>xerces</groupId>
             <artifactId>xercesImpl</artifactId>
             <version>2.7.1</version>
-            <scope>compile</scope>
         </dependency>
         <!-- JAXB -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.1</version>
-            <scope>compile</scope>
         </dependency>
         <!-- PostGIS JDBC -->
         <dependency>
@@ -375,7 +346,6 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.15</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Captcha -->
         <dependency>
@@ -409,26 +379,22 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.6</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>3.6</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>jsr250-api</artifactId>
             <version>1.0</version>
-            <scope>compile</scope>
         </dependency>
         <!-- CSV Library -->
         <dependency>
             <groupId>net.sf.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>2.1</version>
-            <scope>compile</scope>
         </dependency>
         <!-- ALA CAS Authentication -->
         <dependency>
@@ -436,14 +402,12 @@
             <artifactId>cas-client-core</artifactId>
             <version>3.1.10</version>
             <type>jar</type>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>au.org.ala</groupId>
             <artifactId>ala-cas-client</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
-            <scope>compile</scope>
         </dependency>
         <!-- ALA Common UI Components -->
         <dependency>
@@ -451,21 +415,18 @@
             <artifactId>ala-common-ui</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
-            <scope>compile</scope>
         </dependency>
         <!-- Apache ActiveMQ for JMS message queueing into the ALA Biocache -->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
             <version>5.4.2</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Display Tag -->
         <dependency>
             <groupId>displaytag</groupId>
             <artifactId>displaytag</artifactId>
             <version>1.2</version>
-            <scope>compile</scope>
         </dependency>
         <!-- maven svn revision number -->
         <dependency>
