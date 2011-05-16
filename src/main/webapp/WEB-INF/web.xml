@@ -6,15 +6,15 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            /WEB-INF/climatewatch.xml
-            /WEB-INF/climatewatch-hibernate.xml
-            /WEB-INF/climatewatch-hibernate-datasource.xml
-            /WEB-INF/climatewatch-security.xml
-            /WEB-INF/climatewatch-daos.xml
-            /WEB-INF/climatewatch-email.xml
-            /WEB-INF/climatewatch-tiles.xml
-            /WEB-INF/climatewatch-servlet.xml
-            /WEB-INF/climatewatch-profileConfig.xml
+            /WEB-INF/bdrs.xml
+            /WEB-INF/bdrs-hibernate.xml
+            /WEB-INF/bdrs-hibernate-datasource.xml
+            /WEB-INF/bdrs-security.xml
+            /WEB-INF/bdrs-daos.xml
+            /WEB-INF/bdrs-email.xml
+            /WEB-INF/bdrs-tiles.xml
+            /WEB-INF/bdrs-servlet.xml
+            /WEB-INF/bdrs-profileConfig.xml
         </param-value>
     </context-param>
 
@@ -97,52 +97,52 @@
     </session-config>
 
     <servlet>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
     
     <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>/map/icon/record_placemark.png</url-pattern>
     </servlet-mapping>
     
     <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>/bdrs/public/embedded/bdrs-embed.js</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>/bdrs/public/embedded/bdrs-embed.css</url-pattern>
     </servlet-mapping>
     
     <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>/js/mobile/bdrs-mobile-database-content.js</url-pattern>
     </servlet-mapping>
 
      <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>/js/mobile/bdrs-mobile.js</url-pattern>
     </servlet-mapping>
     
      <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>/js/mobile/bdrs-mobile-micro-templates.js</url-pattern>
     </servlet-mapping>
     
      <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>/bdrs/mobile/mobile.manifest</url-pattern>
     </servlet-mapping>
     
     <servlet-mapping>
-        <servlet-name>climatewatch</servlet-name>
+        <servlet-name>bdrs</servlet-name>
         <url-pattern>/bdrs/mobile/offline.html</url-pattern>
     </servlet-mapping>
 

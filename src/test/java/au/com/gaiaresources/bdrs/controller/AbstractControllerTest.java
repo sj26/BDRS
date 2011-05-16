@@ -51,14 +51,14 @@ import au.com.gaiaresources.bdrs.servlet.RequestContextHolder;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
-        "file:src/main/webapp/WEB-INF/climatewatch.xml",
-        "file:src/main/webapp/WEB-INF/climatewatch-hibernate.xml",
-        "file:src/main/webapp/WEB-INF/climatewatch-hibernate-datasource-test.xml",
-        "file:src/main/webapp/WEB-INF/climatewatch-security.xml",
-        "file:src/main/webapp/WEB-INF/climatewatch-daos.xml",
-        "file:src/main/webapp/WEB-INF/climatewatch-email.xml",
-        "file:src/main/webapp/WEB-INF/climatewatch-servlet.xml",
-        "file:src/main/webapp/WEB-INF/climatewatch-profileConfig-test.xml"})
+        "file:src/main/webapp/WEB-INF/bdrs.xml",
+        "file:src/main/webapp/WEB-INF/bdrs-hibernate.xml",
+        "file:src/main/webapp/WEB-INF/bdrs-hibernate-datasource-test.xml",
+        "file:src/main/webapp/WEB-INF/bdrs-security.xml",
+        "file:src/main/webapp/WEB-INF/bdrs-daos.xml",
+        "file:src/main/webapp/WEB-INF/bdrs-email.xml",
+        "file:src/main/webapp/WEB-INF/bdrs-servlet.xml",
+        "file:src/main/webapp/WEB-INF/bdrs-profileConfig-test.xml"})
 @Transactional
 public abstract class AbstractControllerTest extends
         AbstractTransactionalJUnit4SpringContextTests {
