@@ -463,8 +463,8 @@
             </testResource>
         </testResources>
         <plugins>
-        <!-- Build revision stamping -->
-        <plugin>
+            <!-- Build revision stamping -->
+            <plugin>
                 <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
                 <artifactId>maven-svn-revision-number-plugin</artifactId>
                 <version>1.6</version>
@@ -504,7 +504,6 @@
                     </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
-            
             <!-- Testing -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -556,7 +555,7 @@
                             <filtering>true</filtering>
                             <targetPath>WEB-INF</targetPath>
                         </resource>
-                        <resource>
+\                        <resource>
                             <directory>src/main/css</directory>
                             <targetPath>css</targetPath>
                             <filtering>true</filtering>
