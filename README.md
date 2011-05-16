@@ -56,7 +56,7 @@ This is the [Atlas of Living Australia][ala] Citizen Science project codebase.
     
         mvn jetty:run
     
- 7. Check it out; open your browser to http://0.0.0.0:8080/BDRS
+ 7. Check it out: open _http://localhost:8080/BDRS_ and login with username _admin_ and password _password_.
 
 ## Deployment
 
