@@ -17,32 +17,47 @@ public class TestKMLWriter {
     public void testEmptyStyle() throws Exception {
         KMLWriter writer = new KMLWriter();
         writer.createStyle("test");
-        writer.write(true, System.out);
+
+        File file = File.createTempFile("output", ".kml");
+        writer.write(true, new FileOutputStream(file));
+        file.delete();
     }
     
     @Test
     public void testIconStyle() throws Exception {
         KMLWriter writer = new KMLWriter();
         writer.createStyleIcon("test", "http://www.example.com/icon.png");
-        writer.write(true, System.out);
+
+        File file = File.createTempFile("output", ".kml");
+        writer.write(true, new FileOutputStream(file));
+        file.delete();
     }
     
     @Test
     public void testPolyStyle() throws Exception {
         KMLWriter writer = new KMLWriter();
         writer.createStylePoly("pstyle", "aa0000ff".toCharArray());
-        writer.write(true, System.out);
+
+        File file = File.createTempFile("output", ".kml");
+        writer.write(true, new FileOutputStream(file));
+        file.delete();
     }
     
     @Test
     public void testPolyStyleColor() throws Exception {
         KMLWriter writer = new KMLWriter();
         writer.createStylePoly("pstyle", new Color(255, 255, 255, 100));
-        writer.write(true, System.out);
+
+        File file = File.createTempFile("output", ".kml");
+        writer.write(true, new FileOutputStream(file));
+        file.delete();
         
         writer = new KMLWriter();
         writer.createStylePoly("pstyle", new Color(255, 0, 0));
-        writer.write(true, System.out);
+
+        file = File.createTempFile("output", ".kml");
+        writer.write(true, new FileOutputStream(file));
+        file.delete();
     }
     
     
@@ -62,7 +77,9 @@ public class TestKMLWriter {
         writer.createFolder("PolygonTest");
         writer.createPlacemark("PolygonTest", "poly", p);
         
-        writer.write(true, System.out);
+        File file = File.createTempFile("output", ".kml");
+        writer.write(true, new FileOutputStream(file));
+        file.delete();
     }
     
     @Test
@@ -91,6 +108,8 @@ public class TestKMLWriter {
             }
         }
         
-        writer.write(false, new FileOutputStream(new File("C:\\outputkml.kml")));
+        File file = File.createTempFile("output", ".kml");
+        writer.write(false, new FileOutputStream(file));
+        file.delete();
     }
 }

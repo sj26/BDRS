@@ -89,7 +89,9 @@ public class TestWMS {
         Graphics2D g = image.createGraphics();
         renderer.paint(g, new Rectangle(100, 100), mapContext.getLayerBounds());
         
-        ImageIO.write(image, "png", new File("C:\\outputfile.png"));
+        File file = File.createTempFile("outputfile", ".png");
+        ImageIO.write(image, "png", file);
+        file.delete();
         
         g.dispose();
         
