@@ -44,14 +44,7 @@ This is the [Atlas of Living Australia][ala] Citizen Science project codebase.
         <bdrs.db.user.password>password</bdrs.db.user.password>
         <bdrs.db.url>jdbc:postgresql://localhost:5432/bdrs</bdrs.db.url>
         <bdrs.db.driver>org.postgresql.Driver</bdrs.db.driver>
-    
-    Also open `src/main/webapp/WEB-INF/climatewatch-hibernate-datasource.xml` and place the same settings in the `dataSource` bean:
-    
-        <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://localhost:5432/bdrs-dev"/>
-        <property name="username" value="develop"/>
-        <property name="password" value="develop"/>
-    
+
  6. Run it:
     
         mvn jetty:run
