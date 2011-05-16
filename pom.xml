@@ -821,6 +821,9 @@
     <profiles>
         <profile>
             <id>dev</id>
+            <activation>
+              <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <!-- LSID Properties -->
                 <bdrs.lsid.authority>dev.gaiaresources.com.au</bdrs.lsid.authority>
