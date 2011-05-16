@@ -797,11 +797,11 @@
                 <!-- LSID Properties -->
                 <bdrs.lsid.authority>dev.gaiaresources.com.au</bdrs.lsid.authority>
                 <!-- Site properties -->
-               <bdrs.site.name>BDRS Core Portal</bdrs.site.name>
+                <bdrs.site.name>Biological Data Recording System</bdrs.site.name>
                 <!-- Mail properties -->
-                <bdrs.default.mail.server>gaia</bdrs.default.mail.server>
+                <bdrs.default.mail.server>localhost</bdrs.default.mail.server>
                 <bdrs.default.mail.port>25</bdrs.default.mail.port>
-                <bdrs.default.mail.from>bdrs-core@gaiaresources.com.au</bdrs.default.mail.from>
+                <bdrs.default.mail.from>bdrs@localhost</bdrs.default.mail.from>
                 <bdrs.error.mail.to></bdrs.error.mail.to>
                 <bdrs.mail.subject.prefix>[BDRS-Core - Dev]</bdrs.mail.subject.prefix>
                 <!-- Application address properties -->
@@ -811,7 +811,7 @@
                 <!-- Database properties -->
                 <bdrs.db.user.name>postgres</bdrs.db.user.name>
                 <bdrs.db.user.password>postgres</bdrs.db.user.password>
-                <bdrs.db.url>jdbc:postgresql://localhost:5432/climatewatch2</bdrs.db.url>
+                <bdrs.db.url>jdbc:postgresql://localhost:5432/bdrs-dev</bdrs.db.url>
                 <bdrs.db.driver>org.postgresql.Driver</bdrs.db.driver>
                 <!-- Tomcat properties -->
                 <bdrs.tomcat.manager.url>http://localhost:8080/manager</bdrs.tomcat.manager.url>
