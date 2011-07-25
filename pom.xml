@@ -2,7 +2,6 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                         http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
     <groupId>au.com.gaiaresources</groupId>
     <artifactId>bdrs-core</artifactId>
     <version>0.1</version>
@@ -455,12 +454,12 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <!--  Do not filter files with binary content like images! 
-        This will most likely result in corrupt output. 
-        If you have both text files and binary files as resources, 
-        you need to declare two mutually exclusive resource sets. 
-        The first resource set defines the files to be filtered and 
-        the other resource set defines the files to copy unaltered 
+        <!--  Do not filter files with binary content like images!
+        This will most likely result in corrupt output.
+        If you have both text files and binary files as resources,
+        you need to declare two mutually exclusive resource sets.
+        The first resource set defines the files to be filtered and
+        the other resource set defines the files to copy unaltered
         as illustrated below: -->
         <testResources>
             <testResource>
@@ -614,7 +613,7 @@
                     <update>true</update>
                 </configuration>
             </plugin>
-            
+
             <!-- Write profile properties -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -634,7 +633,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
             <!--Hibernate This plugin is used to generate the schema creation SQLfile-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -742,12 +741,12 @@
                     <extended>false</extended>
                     <logTimeZone>GMT</logTimeZone>
                   </requestLog>
-                  <systemProperties implementation="org.mortbay.jetty.plugin.util.SystemProperties"> 
-                        <systemProperty implementation="org.mortbay.jetty.plugin.util.SystemProperty"> 
-                            <name>org.mortbay.jetty.Request.maxFormContentSize</name> 
-                            <value>52428800</value> 
-                        </systemProperty> 
-                   </systemProperties> 
+                  <systemProperties implementation="org.mortbay.jetty.plugin.util.SystemProperties">
+                        <systemProperty implementation="org.mortbay.jetty.plugin.util.SystemProperty">
+                            <name>org.mortbay.jetty.Request.maxFormContentSize</name>
+                            <value>52428800</value>
+                        </systemProperty>
+                   </systemProperties>
                 </configuration>
             </plugin>
 <!--
@@ -845,7 +844,7 @@
         <profile>
             <id>dev</id>
             <activation>
-              <activeByDefault>true</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <!-- LSID Properties -->
