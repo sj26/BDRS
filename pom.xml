@@ -295,6 +295,12 @@
             <artifactId>gt-epsg-wkt</artifactId>
             <version>2.5-SNAPSHOT</version>
         </dependency>
+		<dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-jai-tools</artifactId>
+            <version>2.5.5-jai-tools</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-shapefile</artifactId>
@@ -500,7 +506,9 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <nonFilteredFileExtensions>
-                        <nonFilteredFileExtension>xls</nonFilteredFileExtension>
+			            <nonFilteredFileExtension>xls</nonFilteredFileExtension>
+						<nonFilteredFileExtension>zip</nonFilteredFileExtension>
+						<nonFilteredFileExtension>apk</nonFilteredFileExtension>
                     </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
@@ -510,6 +518,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.7.2</version>
                 <configuration>
+                	<encoding>UTF-8</encoding>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>xls</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>zip</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
                     <excludes>
                         <!--exclude>**/*Client.java</exclude-->
                     </excludes>
@@ -539,23 +552,21 @@
                     <webResources>
                         <resource>
                             <directory>src/main/webapp/WEB-INF/jsp</directory>
-                            <filtering>true</filtering>
+                            <filtering>false</filtering>
                             <targetPath>WEB-INF/jsp</targetPath>
-                            <includes>
-                                <include>**/template/*.jsp</include>
-                            </includes>
-                        </resource>
-                        <resource>
-                            <directory>src/main/webapp/WEB-INF/jsp</directory>
-                            <filtering>true</filtering>
-                            <targetPath>WEB-INF/jsp</targetPath>
+                            <excludes>
+                                <exclude>**/template/**/*.jsp</exclude>
+                            </excludes>
                         </resource>
                         <resource>
                             <directory>src/main/webapp/WEB-INF</directory>
                             <filtering>true</filtering>
                             <targetPath>WEB-INF</targetPath>
+                            <excludes>
+                                <exclude>**/lib/**/*.jar</exclude>
+                            </excludes>
                         </resource>
-\                        <resource>
+                        <resource>
                             <directory>src/main/css</directory>
                             <targetPath>css</targetPath>
                             <filtering>true</filtering>
@@ -578,6 +589,11 @@
                         <resource>
                             <directory>src/main/data</directory>
                             <targetPath>data</targetPath>
+                            <filtering>false</filtering>
+                        </resource>
+                        <resource>
+                            <directory>src/main/mobile</directory>
+                            <targetPath>mobile</targetPath>
                             <filtering>false</filtering>
                         </resource>
                     </webResources>
@@ -726,6 +742,12 @@
                     <extended>false</extended>
                     <logTimeZone>GMT</logTimeZone>
                   </requestLog>
+                  <systemProperties implementation="org.mortbay.jetty.plugin.util.SystemProperties"> 
+                        <systemProperty implementation="org.mortbay.jetty.plugin.util.SystemProperty"> 
+                            <name>org.mortbay.jetty.Request.maxFormContentSize</name> 
+                            <value>52428800</value> 
+                        </systemProperty> 
+                   </systemProperties> 
                 </configuration>
             </plugin>
 <!--
@@ -814,6 +836,7 @@
                     <findbugsXmlOutput>true</findbugsXmlOutput>
                     <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
                     <xmlOutput>true</xmlOutput>
+                    <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
                 </configuration>
             </plugin>
         </plugins>
