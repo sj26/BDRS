@@ -17,27 +17,25 @@ import au.com.gaiaresources.bdrs.model.user.UserDAO;
 public class AuthenticationService implements UserDetailsService {
     @Autowired
     private UserDAO userDAO;
-    
+
     @SuppressWarnings("unused")
     private Logger log = Logger.getLogger(AuthenticationService.class);
-    
+
     /**
      * {@inheritDoc}
      */
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException, DataAccessException {
-    	User u = userDAO.getUser(userName);
+        User u = userDAO.getUser(userName);
         if (u == null) {
+            log.warn("User " + userName + " not found.");
             throw new UsernameNotFoundException("User " + userName + " not found.");
-//            u = userDAO.getRootUser(userName);
-//            if(u == null) {
-//                throw new UsernameNotFoundException("User " + userName + " not found.");
-//            }
         }
+        log.info("User " + userName + " found, id " + u.getId().toString() + ".");
         return new UserDetails(u);
     }
-    
-    
+
+
     public User getUserByRegistrationKey(String rego){
         User u = userDAO.getUserByRegistrationKey(rego);
         return u;
