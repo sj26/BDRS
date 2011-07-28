@@ -110,21 +110,21 @@ public class PortalSelectionFilter implements Filter {
             } else {
                 List<Portal> portalList = portalDAO.getPortals(sesh);
                 if (!portalList.isEmpty() && !response.isCommitted()) {
-    
+
                     PortalMatches matches = portalMatcher.match(sesh, url);
                     Portal defaultPortal = matches.getDefaultPortal();
                     Portal matchedPortal = matches.getMatchedPortal();
                     PortalEntryPoint matchedEntryPoint = matches.getMatchedEntryPoint();
-    
+
                     // For each portal, test the entry points.
                     if (defaultPortal == null) {
-                        log.debug("No default Portal. Treating first portal as default.");
                         defaultPortal = portalList.get(0);
+                        log.debug("No default Portal. Treating first portal as default: " + defaultPortal.getName());
                     }
-    
+
                     if (matchedPortal == null) {
                         if (rawPortalId == null) {
-                            log.debug("URL does not match any known portal entry pattern. Using default portal.");
+                            log.debug("URL does not match any known portal entry pattern. Using default portal: " + defaultPortal.getName());
                             matchedPortal = defaultPortal;
                         } else {
                             // The Portal ID has been set so there is nothing left to do.

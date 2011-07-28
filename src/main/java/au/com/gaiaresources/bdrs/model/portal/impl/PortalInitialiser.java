@@ -112,12 +112,13 @@ public class PortalInitialiser implements ServletContextListener {
         PortalDAO portalDAO = AppContext.getBean(PortalDAO.class);
         Session sesh = portalDAO.getSessionFactory().getCurrentSession();
 
-        if (!portalDAO.getPortals().isEmpty()) {
-            log.info("ROOT portal already exists, skipping initialisation");
-        } else {
-            log.info("Initialising ROOT portal");
-            try {
-                Transaction tx = sesh.beginTransaction();
+        try {
+            Transaction tx = sesh.beginTransaction();
+
+            if (!portalDAO.getPortals().isEmpty()) {
+                log.info("ROOT portal already exists, skipping initialisation");
+            } else {
+                log.info("Initialising ROOT portal");
 
                 initRootPortal();
 
@@ -125,11 +126,11 @@ public class PortalInitialiser implements ServletContextListener {
                 BDRSWurflLoadService loadService = AppContext.getBean(BDRSWurflLoadService.class);
                 loadService.loadWurflXML("wurfl.xml");
                 loadService.loadWurflXML("wurfl_patch.xml");
-
-                tx.commit();
-            } catch (Exception e) {
-                log.error("Failed to initialise ROOT portal", e);
             }
+
+            tx.commit();
+        } catch (Exception e) {
+            log.error("Failed to initialise ROOT portal", e);
         }
     }
 
