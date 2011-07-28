@@ -39,6 +39,7 @@ public class PortalSelectionFilterMatcher {
             if (portal.isDefault()) {
                 if (defaultPortal == null) {
                     defaultPortal = portal;
+                    log.debug("Found default portal: " + portal.getName());
                 } else {
                     log.debug("Multiple default portals located using the first.");
                 }
