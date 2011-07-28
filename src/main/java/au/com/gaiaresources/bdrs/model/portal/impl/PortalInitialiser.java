@@ -44,7 +44,7 @@ public class PortalInitialiser implements ServletContextListener {
     public static final String ROOT_PORTAL_SETTINGS = "rootPortal.json";
 
     private Logger log = Logger.getLogger(getClass());
-    
+
     public static final Map<String, String> CONTENT;
     static {
         Map<String, String> tmp = new HashMap<String, String>();
@@ -62,19 +62,19 @@ public class PortalInitialiser implements ServletContextListener {
         tmp.put("root/portalEdit/entryPoints", "root_portalEdit_entryPoints.vm");
         tmp.put("root/portalEdit/patternTester", "root_portalEdit_patternTester.vm");
         tmp.put("admin/thresholdEdit", "admin_thresholdEdit.vm");
-        
+
         tmp.put("root/theme/listing", "root_theme_listing.vm");
         tmp.put("root/theme/edit", "root_theme_edit.vm");
         tmp.put("root/theme/edit/themeElements", "root_theme_edit_themeElements.vm");
         tmp.put("root/theme/edit/advanced", "root_theme_edit_advanced.vm");
         tmp.put("root/theme/edit/advanced/editFile", "root_theme_edit_advanced_editFile.vm");
-        
+
         tmp.put("admin/groupEdit", "admin_groupEdit.vm");
         tmp.put("admin/groupListing", "admin_groupListing.vm");
-        
+
         tmp.put("admin/censusMethodEdit", "admin_censusMethodEdit.vm");
         tmp.put("admin/censusMethodListing", "admin_censusMethodListing.vm");
-        
+
         tmp.put("email/ExpertConfirmation", "/au/com/gaiaresources/bdrs/email/ExpertConfirmation.vm");
         tmp.put("email/PasswordReminder", "/au/com/gaiaresources/bdrs/email/PasswordReminder.vm");
         tmp.put("email/StudentSignUp", "/au/com/gaiaresources/bdrs/email/StudentSignUp.vm");
@@ -85,7 +85,7 @@ public class PortalInitialiser implements ServletContextListener {
         tmp.put("email/UserSignupApproval", "/au/com/gaiaresources/bdrs/email/UserSignupApproval.vm");
         tmp.put("email/UserSignupApproved", "/au/com/gaiaresources/bdrs/email/UserSignUpApproved.vm");
         tmp.put("email/UserSignUpWait", "/au/com/gaiaresources/bdrs/email/UserSignUpWait.vm");
-        
+
         CONTENT = Collections.unmodifiableMap(tmp);
     }
 
@@ -109,31 +109,28 @@ public class PortalInitialiser implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent arg0) {
-    	 PortalDAO portalDAO = AppContext.getBean(PortalDAO.class);
-         Session sesh = portalDAO.getSessionFactory().getCurrentSession();
-    	
-        try {
-            Transaction tx = sesh.beginTransaction();
+        PortalDAO portalDAO = AppContext.getBean(PortalDAO.class);
+        Session sesh = portalDAO.getSessionFactory().getCurrentSession();
 
-            if (!portalDAO.getPortals().isEmpty()) {
-                log.info("ROOT portal already exists, skipping initialisation");
-               // return;
-            }else{
-            	 log.info("Initialising ROOT portal");
-                 initRootPortal();
+        if (!portalDAO.getPortals().isEmpty()) {
+            log.info("ROOT portal already exists, skipping initialisation");
+        } else {
+            log.info("Initialising ROOT portal");
+            try {
+                Transaction tx = sesh.beginTransaction();
+
+                initRootPortal();
+
+                // XXX: This is REALLY poorly thought out
+                BDRSWurflLoadService loadService = AppContext.getBean(BDRSWurflLoadService.class);
+                loadService.loadWurflXML("wurfl.xml");
+                loadService.loadWurflXML("wurfl_patch.xml");
+
+                tx.commit();
+            } catch (Exception e) {
+                log.error("Failed to initialise ROOT portal", e);
             }
-            
-            BDRSWurflLoadService loadService = AppContext.getBean(BDRSWurflLoadService.class);
-            loadService.loadWurflXML("wurfl.xml");
-            loadService.loadWurflXML("wurfl_patch.xml");
-            
-
-
-            tx.commit();
-        } catch (Exception e) {
-            log.error("Failed to initialise ROOT portal", e);
         }
-        
     }
 
     // call this one on server startup if no portal already exists....
@@ -170,7 +167,7 @@ public class PortalInitialiser implements ServletContextListener {
 
         Session sesh = prefDAO.getSessionFactory().getCurrentSession();
         Portal portal = createPortal(sesh, portalJsonObjList.get(0));
-        
+
         if (portal == null) {
             throw new Exception("Root portal creation failed!");
         }
@@ -187,10 +184,10 @@ public class PortalInitialiser implements ServletContextListener {
 
         // Just note we don't need to call PortalInitialiser.init() on this new portal.
         // The init method is called inside of PortalDAO.save.
-        
+
         return portal;
     }
-    
+
     private static String readStream(InputStream inStream) throws IOException {
         StringWriter outStream = new StringWriter();
         IOUtils.copy(inStream, outStream);
@@ -230,7 +227,7 @@ public class PortalInitialiser implements ServletContextListener {
      * @throws IOException
      */
     public Content initContent(ContentDAO contentDAO, Portal portal, String key, String value) throws IOException {
-        // note we now copy stuff directly from the file - all the templating stuff is 
+        // note we now copy stuff directly from the file - all the templating stuff is
         // left in its original form.
         if (value == null)
             value = CONTENT.get(key);
@@ -265,7 +262,7 @@ public class PortalInitialiser implements ServletContextListener {
             throw new NullPointerException("portal cannot be null");
             // No need to check for the entry point because it cannot exist.
         }
-        
+
         PortalDAO portalDAO = AppContext.getBean(PortalDAO.class);
         String entryPattern = jsonObject.getString("pattern");
 
