@@ -193,7 +193,7 @@ OpenLayers.Layer.Vector = OpenLayers.Class(OpenLayers.Layer, {
      * the first renderer which returns true for the  'supported()'
      * method will be used, if not defined in the 'renderer' option.
      */
-    renderers: ['SVG', 'VML', 'Canvas'],
+    renderers: ['Canvas', 'SVG', 'VML'],
     
     /** 
      * Property: renderer
