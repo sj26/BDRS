@@ -192,8 +192,9 @@ OpenLayers.Layer.Vector = OpenLayers.Class(OpenLayers.Layer, {
      * add support for additional renderers. This list is ordered:
      * the first renderer which returns true for the  'supported()'
      * method will be used, if not defined in the 'renderer' option.
+     * XXX: WebKit doesn't render SVG inside iframes properly :-(
      */
-    renderers: ['Canvas', 'SVG', 'VML'],
+    renderers: (jQuery.browser.webkit ? ['Canvas', 'VML'] : ['SVG', 'Canvas', 'VML']),
     
     /** 
      * Property: renderer
