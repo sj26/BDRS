@@ -34,7 +34,7 @@ bdrs.location.initLocationMapAndTable = function(locationRowURL) {
                 layer.destroyFeatures([feature]);
             });
 
-            var lonLat = feature.geometry.bounds.getCenterLonLat();
+            var lonLat = feature.geometry.getBounds().getCenterLonLat();
             lonLat.transform(bdrs.map.GOOGLE_PROJECTION,
                  bdrs.map.WGS84_PROJECTION);
 
